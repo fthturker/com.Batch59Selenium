@@ -14,7 +14,7 @@ public class C01_AmazonSearch {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-        //  a. web sayfasına gidin. https://www.amazon.com/
+        //  a. amazon web sayfasına gidin. https://www.amazon.com/
         driver.get("https://www.amazon.com/");
 
         //  b. Search(ara) “city bike” giriniz
