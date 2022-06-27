@@ -9,46 +9,42 @@ import java.time.Duration;
 
 public class C04_WebElementMethodlari {
     /*
-    1- amazon.com'a gidip arama kutusunu locate edin
+     1- amazon.com'a gidip arama kutusunu locate edin
      2- arama kutusunun tagName'inin input oldugunu test edin
      3- arama kutusunun name attiribute'nun degerinin ........ oldugunu test edin
      */
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         // 1- amazon.com'a gidip arama kutusunu locate edin
-
         driver.get("https://www.amazon.com");
-        WebElement aramaKutusu=driver.findElement(By.id("twotabsearchtextbox"));
+        WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
 
         //  2- arama kutusunun tagName'inin input oldugunu test edin
+        String expectedTagName = "input";
+        String actualTagName = aramaKutusu.getTagName();
 
-        String expectedTagName="input";
-        String actualTagName=aramaKutusu.getTagName();
-
-        if (expectedTagName.equals(actualTagName)){
+        if (expectedTagName.equals(actualTagName)) {
             System.out.println("TagName testi PASSED");
-        }else{
+        } else {
             System.out.println("TagName testi FAILED");
         }
-       // 3- arama kutusunun name attiribute'nun degerinin ........ oldugunu test edin
+        // 3- arama kutusunun name attiribute'nun degerinin ........ oldugunu test edin
+        String expectedNameDegeri = "field-keywords";
+        String actualNameDegeri = aramaKutusu.getAttribute("name");
 
-        String expectedNameDegeri="field-keywords";
-        String actualNameDegeri=aramaKutusu.getAttribute("name");
-
-        if (expectedNameDegeri.equals(actualNameDegeri)){
+        if (expectedNameDegeri.equals(actualNameDegeri)) {
             System.out.println("name attirubite testi PASSED");
-        }else{
+        } else {
             System.out.println("name attribute testi FAILED");
         }
 
-        System.out.println("konum : " +aramaKutusu.getLocation());
-        System.out.println("webelement yuksekligi : " +aramaKutusu.getSize().height);
-
+        System.out.println("konum : " + aramaKutusu.getLocation());
+        System.out.println("webelement yuksekligi : " + aramaKutusu.getSize().height);
 
         driver.close();
 

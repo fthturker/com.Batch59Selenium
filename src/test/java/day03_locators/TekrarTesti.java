@@ -1,8 +1,12 @@
 package day03_locators;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class TekrarTesti {
     public static void main(String[] args) {
@@ -68,6 +72,13 @@ public class TekrarTesti {
         } else {
             System.out.println("Title FAILED");
             System.out.println(actualUrl);
+
+            List<WebElement> linklerListesi=driver.findElements(By.tagName("a"));
+
+            for (WebElement each:linklerListesi
+                 ) {
+                System.out.println(each.getText());
+            }
 
             //sayfayi kapatin
             driver.close();

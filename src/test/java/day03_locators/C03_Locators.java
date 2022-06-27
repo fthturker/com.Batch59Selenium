@@ -10,8 +10,8 @@ import java.util.List;
 
 public class C03_Locators {
     /*
-    Main method oluşturun ve aşağıdaki görevi tamamlayın.
-            a. http://a.testaddressbook.com adresine gidiniz.
+    1. Main method oluşturun ve aşağıdaki görevi tamamlayın.
+    a. http://a.testaddressbook.com adresine gidiniz.
     b. Sign in butonuna basin
     c. email textbox,password textbox, and signin button elementlerini locate ediniz..
     d. Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın:
@@ -19,7 +19,7 @@ public class C03_Locators {
     ii. Password : Test1234!
     e. Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
     f. “Addresses” ve “Sign Out” textlerinin görüntülendiğini( displayed) doğrulayin(verify).
-            3. Sayfada kac tane link oldugunu bulun.
+    2. Sayfada kac tane link oldugunu bulun.
      */
 
     public static void main(String[] args) {
@@ -40,13 +40,12 @@ public class C03_Locators {
         WebElement passwordTextBox=driver.findElement(By.name("session[password]"));
         WebElement signInButonu=driver.findElement(By.name("commit"));
         //d. Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın:
-
         //i. Username : testtechproed@gmail.com
-
         //ii. Password : Test1234!
             emailTextBox.sendKeys("testtechproed@gmail.com");
             passwordTextBox.sendKeys("Test1234!");
             signInButonu.click();
+
               //  e. Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
         WebElement actualKullaniciAdiElementi=driver.findElement(By.className("navbar-text"));
         System.out.println(actualKullaniciAdiElementi.getText());
@@ -60,7 +59,7 @@ public class C03_Locators {
 
         //bir webElementin uzerinde ne yazdigini gormek istersek webElementIsmi.getText() kullaniriz
 
-                //f. “Addresses” ve “Sign Out” textlerinin görüntülendiğini( displayed) doğrulayin(verify).
+        //f. “Addresses” ve “Sign Out” textlerinin görüntülendiğini( displayed) doğrulayin(verify).
         WebElement adressesElementi=driver.findElement(By.linkText("Addresses"));
         WebElement signOutElementi=driver.findElement(By.linkText("Sign out"));
         if (adressesElementi.isDisplayed()){
@@ -87,7 +86,6 @@ public class C03_Locators {
              ) {
             System.out.println(each.getText());
         }
-
 
         driver.close();
 
