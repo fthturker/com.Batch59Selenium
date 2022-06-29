@@ -26,7 +26,9 @@ public class Class_Work {
 
         // Relative locator'larin dogru calistigini test edin
 
-        WebElement berlin=driver.findElement(RelativeLocator.with(By.tagName("img")).below(nycB).above(sailorB).toRightOf(bostonB));
+        WebElement berlin=driver.findElement(RelativeLocator.with(By.tagName("img"))
+                .below(nycB).above(sailorB).toRightOf(bostonB));
+
         System.out.println(berlin.getAttribute("id"));
         driver.close();
 
