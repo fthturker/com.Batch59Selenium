@@ -27,8 +27,8 @@ public class Q4 {
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
         Thread.sleep(2000); //bunu cok hızlı gecitigi icin, asagiya kaydigini gorun diye ekledim sadece..
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,300)"); // sayfada 300 piksel asagi in demektir..
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("window.scrollBy(0,300)"); // sayfada 300 piksel asagi in demektir..
 
         driver.findElement(By.id("calculatetest")).click();
 
